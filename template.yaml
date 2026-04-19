@@ -31,7 +31,8 @@ Resources:
     Properties:
       ApiId: !Ref PojosApiId
       RouteKey: 'GET /traveler'
-      AuthorizationType: NONE
+      AuthorizationType: JWT
+      AuthorizerId: !Ref PojosAuthorizerId
       Target: !Sub 'integrations/${TravelerIntegration}'
   TravelerInvokePermission:
     Type: AWS::Lambda::Permission
